@@ -3,7 +3,7 @@ const path = require("path")
 var app = express();
 const rout = require(path.join(__dirname+"/routers/blog.js"))
 const blogs = require(path.join(__dirname+"/data/blogs.js")) 
-const port = 3000
+const port = process.env.PORT || 3000;
 const { engine } = require('express-handlebars');
 
 app.engine('handlebars', engine({ extname: '.hbs', defaultLayout: "main"}));
